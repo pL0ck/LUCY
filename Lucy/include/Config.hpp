@@ -1,4 +1,6 @@
 #pragma once
+#include <SFML/System.hpp>
+
 constexpr auto LUCY_MAJOR_VERSION = 0;
 constexpr auto LUCY_MINOR_VERSION = 0;
 constexpr auto LUCY_REVISION_VERSION = 1;

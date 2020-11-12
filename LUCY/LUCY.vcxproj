@@ -19,11 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\LUCY\Config.hpp" />
-    <ClInclude Include="include\LUCY\Core.hpp" />
+    <ClInclude Include="include\Button.hpp" />
+    <ClInclude Include="include\Engine.hpp" />
+    <ClInclude Include="include\Control.hpp" />
+    <ClInclude Include="include\Config.hpp" />
+    <ClInclude Include="include\WorkSpace.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\LUCY\Core.cpp" />
+    <ClCompile Include="src\Button.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Control.cpp" />
+    <ClCompile Include="src\WorkSpace.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

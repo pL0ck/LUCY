@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs>D:\Libraries\Documents\Visual Studio 2019\Projects\c++\LUCY\bin\Debug-x64\LUCY\LUCY.dll;D:\Libraries\Documents\Visual Studio 2019\Projects\c++\LUCY\bin\Debug-x64\UITest\UITest.exe</ProjectOutputs>
+  <ProjectOutputs>D:\Libraries\Documents\Visual Studio 2019\Projects\c++\Lucy\bin\Debug-x64\LUCY\LUCY.dll;D:\Libraries\Documents\Visual Studio 2019\Projects\c++\Lucy\bin\Debug-x64\UITest\UITest.exe</ProjectOutputs>
   <ContentFiles></ContentFiles>
   <SatelliteDlls></SatelliteDlls>
   <NonRecipeFileRefs></NonRecipeFileRefs>
