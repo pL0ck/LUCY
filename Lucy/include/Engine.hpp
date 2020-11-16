@@ -2,13 +2,12 @@
 #include "Control.hpp"
 #include "Config.hpp"
 #include "Button.hpp"
-
 #include <map>
 #include <string>
 
 namespace Lucy
 {
-	class Engine
+	class LUCY_API Engine
 	{
 	public:
 
@@ -20,10 +19,16 @@ namespace Lucy
 
 		void Initialize();
 		
-		void Add(Lucy::Control myControl);
+		void Add(Lucy::Control* myControl);
+
+		void DrawControls();
+
+	protected:
+
 
 	private:
-		static std::map<std::string, Lucy::Control> Controls;
+		using myControls = std::map<sf::String, Lucy::Control*>;
+		myControls Controls;
 
 	};
 }

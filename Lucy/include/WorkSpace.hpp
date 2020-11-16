@@ -5,6 +5,7 @@
 
 #include <SFML/Config.hpp>
 #include <SFML/Graphics.hpp>
+#include <utility>
 
 namespace Lucy
 {
@@ -18,7 +19,7 @@ namespace Lucy
 		~WorkSpace();
 
 		//Save our RenderWindow for future use
-		void Initialize(sf::RenderWindow *Target);
+		void Initialize(sf::RenderWindow& Target);
 
 		/** Update
 		 * @param seconds Elapsed time in seconds.
@@ -30,7 +31,7 @@ namespace Lucy
 		 */
 		void HandleEvent(const sf::Event& event);
 
-		void Add(Lucy::Control myControl);
+		void Add(Lucy::Control& myControl);
 
 	private:
 		sf::RenderWindow *myWorkSpace;

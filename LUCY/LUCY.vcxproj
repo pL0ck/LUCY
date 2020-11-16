@@ -19,13 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Container.hpp" />
     <ClInclude Include="include\Button.hpp" />
     <ClInclude Include="include\Engine.hpp" />
     <ClInclude Include="include\Control.hpp" />
     <ClInclude Include="include\Config.hpp" />
     <ClInclude Include="include\WorkSpace.hpp" />
+    <ClInclude Include="include\LayoutGroup.hpp" />
+    <ClInclude Include="include\Properties.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Properties.cpp" />
+    <ClCompile Include="src\Container.cpp" />
+    <ClCompile Include="src\LayoutGroup.cpp" />
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Control.cpp" />

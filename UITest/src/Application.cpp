@@ -1,5 +1,6 @@
 #include <WorkSpace.hpp>
 #include <SFML/Graphics.hpp>
+#include <LayoutGroup.hpp>
 
 int main()
 {
@@ -11,10 +12,23 @@ int main()
 	sf::Clock clock;
 
 	Lucy::WorkSpace LucyUI;
-	LucyUI.Initialize(&window);
-	Lucy::Button btn;
+	LucyUI.Initialize(window);
+	Lucy::Button btn("myButton1");
 	LucyUI.Add(btn);
 
+	Lucy::Button btn2("myButton2");
+	LucyUI.Add(btn2);
+
+	Lucy::Button btn3("myButton3");
+	LucyUI.Add(btn3);
+
+	Lucy::Button btn4("myButton4");
+	LucyUI.Add(btn4);
+
+	Lucy::LayoutGroup lg1;
+	LucyUI.Add(lg1);
+	Lucy::Button btn5("myButton5");
+	lg1.Add(btn5);
 
 
 	while (window.isOpen())
@@ -36,4 +50,6 @@ int main()
 		window.clear();
 		window.display();
 	}
+
+	getchar();
 }
