@@ -27,8 +27,10 @@
     <ClInclude Include="include\WorkSpace.hpp" />
     <ClInclude Include="include\LayoutGroup.hpp" />
     <ClInclude Include="include\Properties.hpp" />
+    <ClInclude Include="include\RoundedRectangle.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\RoundedRectangle.cpp" />
     <ClCompile Include="src\Properties.cpp" />
     <ClCompile Include="src\Container.cpp" />
     <ClCompile Include="src\LayoutGroup.cpp" />
@@ -36,6 +38,9 @@
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Control.cpp" />
     <ClCompile Include="src\WorkSpace.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

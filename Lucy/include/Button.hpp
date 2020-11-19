@@ -1,6 +1,7 @@
 #pragma once
 #include "Control.hpp"
 #include "Config.hpp"
+#include "RoundedRectangle.hpp"
 #include <string>
 #include <memory>
 #include <utility>
@@ -19,10 +20,12 @@ namespace Lucy
 
 		Button(sf::String ButtonName);
 
+		Button(sf::String ButtonName, sf::Vector2f ButtonSize, sf::Vector2f ButtonLocation);
+
 		void Draw();
 
 	private:
-
+		Lucy::RoundedRectangle myButton;
 	};
 
 }

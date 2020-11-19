@@ -14,7 +14,7 @@ namespace Lucy
 
 	void WorkSpace::Initialize(sf::RenderWindow& Target)
 	{
-		Lucy::WorkSpace::myWorkSpace = &Target;
+		myWorkSpace = &Target;
 		myEngine.Initialize();
 		std::cout << "Workspace Initialised\n";
 	}

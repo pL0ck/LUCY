@@ -14,12 +14,11 @@ namespace Lucy
 			LayoutGroup
 		};
 
-		Lucy::Control* Handle();
-
 		//Ctor
 		Control();
 		//Dtor
 		virtual ~Control();
+
 		Control::CType GetType();
 		virtual void Draw();
 

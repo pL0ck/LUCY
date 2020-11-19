@@ -39,6 +39,9 @@
     <ClInclude Include="include\Properties.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\RoundedRectangle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WorkSpace.cpp">
@@ -62,5 +65,11 @@
     <ClCompile Include="src\Properties.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\RoundedRectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
