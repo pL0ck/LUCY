@@ -2,7 +2,6 @@
 #include "Config.hpp"
 #include "Container.hpp"
 #include "Control.hpp"
-#include <Engine.hpp>
 
 namespace Lucy
 {
@@ -20,7 +19,8 @@ namespace Lucy
 		void Draw();
 
 	private:
-		std::map<sf::String, std::shared_ptr<Lucy::Control>> Children;
+		using myChildren = std::map<sf::String, Lucy::Control*>;
+		myChildren Children;
 	};
 }
 

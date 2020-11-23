@@ -1,11 +1,11 @@
 #pragma once
 #include "Config.hpp"
-#include "Engine.hpp"
+//#include "Engine.hpp"
 #include "Control.hpp"
 
 #include <SFML/Config.hpp>
 #include <SFML/Graphics.hpp>
-#include <utility>
+#include <map>
 
 namespace Lucy
 {
@@ -35,7 +35,8 @@ namespace Lucy
 
 	private:
 		sf::RenderWindow *myWorkSpace;
-		Lucy::Engine myEngine;
+		using myControls = std::map<sf::String, Lucy::Control*>;
+		myControls Controls;
 	};
 }
 

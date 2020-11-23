@@ -22,10 +22,14 @@ namespace Lucy
 
 		Button(sf::String ButtonName, sf::Vector2f ButtonSize, sf::Vector2f ButtonLocation);
 
-		void Draw();
+		void Draw(sf::RenderWindow *Target);
+
+		void OnPropertyChanged(int WhatChanged);
 
 	private:
 		Lucy::RoundedRectangle myButton;
+		void SetupCallback();
+
 	};
 
 }

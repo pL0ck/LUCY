@@ -20,7 +20,7 @@ namespace Lucy
 		virtual ~Control();
 
 		Control::CType GetType();
-		virtual void Draw();
+		virtual void Draw(sf::RenderWindow *Target);
 
 	protected:
 		void SetType(CType myType);

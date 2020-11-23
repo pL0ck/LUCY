@@ -14,13 +14,13 @@ namespace Lucy
 
 	LayoutGroup::LayoutGroup(sf::String GroupName)
 	{
-		Name(GroupName);
+		PsetName(GroupName);
 		SetType(Control::CType::LayoutGroup);
 	}
 
 	void LayoutGroup::Add(Lucy::Control& myControl)
 	{
-		Children[myControl.Name()] = std::make_shared<Lucy::Control>(myControl);
+		Children[myControl.Name] = &myControl;
 	}
 
 	void LayoutGroup::Draw()

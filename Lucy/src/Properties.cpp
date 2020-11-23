@@ -4,94 +4,113 @@
 namespace Lucy
 {
 
-	const sf::String Properties::Name()
+	//const sf::String Properties::PsetName()
+	//{
+	//	return pName;
+	//}
+
+	void Properties::PsetName(const sf::String& ControlName)
 	{
-		return pName;
+		Name = ControlName;
 	}
 
-	void Properties::Name(const sf::String& myName)
+	//const sf::Vector2f Properties::PsetSize()
+	//{
+	//	return mySize;
+	//}
+
+	void Properties::PsetSize(const sf::Vector2f& ControlSize)
 	{
-		pName = myName;
+		Size = ControlSize;
+		PropertyChanged(pChanged::PropertySize);
 	}
 
-	const sf::Vector2f Properties::Size()
+	//const sf::Vector2f Properties::PsetLocation()
+	//{
+	//	return myLocation;
+	//}
+
+	void Properties::PsetLocation(const sf::Vector2f& ControlLocation)
 	{
-		return mySize;
+		Location = ControlLocation;
 	}
 
-	void Properties::Size(const sf::Vector2f& ControlSize)
+	//const float Properties::PsetCornerRadius()
+	//{
+	//	return myCornerRadius;
+	//}
+
+	void Properties::PsetCornerRadius(float CRadius)
 	{
-		mySize = ControlSize;
+		CornerRadius = CRadius;
+		PropertyChanged(pChanged::PropertyCornerRadius);
 	}
 
-	const sf::Vector2f Properties::Location()
+	//const unsigned int Properties::PsetCornerPoints()
+	//{
+	//	return myCornerPointCount;
+	//}
+
+	void Properties::PsetCornerPoints(unsigned int PointCount)
 	{
-		return myLocation;
+		CornerPoints = PointCount;
+		PropertyChanged(pChanged::PropertyCornerPoints);
 	}
 
-	void Properties::Location(const sf::Vector2f& ControlLocation)
+	//const sf::Color Properties::PsetOutlineColor()
+	//{
+	//	return PsetOutlineColor;
+	//}
+
+	void Properties::PsetOutlineColor(sf::Color OColor)
 	{
-		myLocation = ControlLocation;
+		OutlineColor = OColor;
+		PropertyChanged(pChanged::PropertyOutlineColor);
 	}
 
-	const float Properties::CornerRadius()
+	//const sf::Color Properties::PsetFillColor()
+	//{
+	//	return myFillColor;
+	//}
+
+	void Properties::PsetFillColor(sf::Color FColor)
 	{
-		return myCornerRadius;
+		FillColor = FColor;
+		PropertyChanged(pChanged::PropertyFillColor);
 	}
 
-	void Properties::CornerRadius(float CRadius)
+	//const float Properties::PsetOutlineThickness()
+	//{
+	//	return myOutlineThickness;
+	//}
+
+	void Properties::PsetOutlineThickness(float Thickness)
 	{
-		myCornerRadius = CRadius;
+		OutlineThickness = Thickness;
+		PropertyChanged(pChanged::PropertyOutlineThickness);
 	}
 
-	const unsigned int Properties::CornerPointCount()
+	//const Lucy::Corners Properties::PsetStyle()
+	//{
+	//	return myStyle;
+	//}
+
+	void Properties::PsetStyle(Lucy::Corners ControlStyle)
 	{
-		return myCornerPointCount;
+		Style = ControlStyle;
+		PropertyChanged(pChanged::PropertyStyle);
 	}
 
-	void Properties::CornerPointCount(unsigned int& PointCount)
+	void Properties::NotifyCallback(std::function<void(int)> CallbackFunction)
 	{
-		myCornerPointCount = PointCount;
+		myCallbackFunction = CallbackFunction;
+		CallbackSetup = true;
 	}
 
-	const sf::Color Properties::OutlineColor()
+	void Properties::PropertyChanged(int WhatProperty)
 	{
-		return myOutlineColor;
-	}
-
-	void Properties::OutlineColor(sf::Color OColor)
-	{
-		myOutlineColor = OColor;
-	}
-
-	const sf::Color Properties::FillColor()
-	{
-		return myFillColor;
-	}
-
-	void Properties::FillColor(sf::Color FColor)
-	{
-		myFillColor = FColor;
-	}
-
-	const float Properties::OutlineThickness()
-	{
-		return myOutlineThickness;
-	}
-
-	void Properties::OutlineThickness(float Thickness)
-	{
-		myOutlineThickness = Thickness;
-	}
-
-	const Lucy::Corners Properties::Style()
-	{
-		return myStyle;
-	}
-
-	void Properties::Style(Lucy::Corners ControlStyle)
-	{
-		myStyle = ControlStyle;
+		if (CallbackSetup)
+			myCallbackFunction(WhatProperty);
 	}
 
 

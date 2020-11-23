@@ -1,6 +1,7 @@
 #include <WorkSpace.hpp>
 #include <SFML/Graphics.hpp>
 #include <LayoutGroup.hpp>
+#include <Button.hpp>
 
 int main()
 {
@@ -13,10 +14,15 @@ int main()
 
 	Lucy::WorkSpace LucyUI;
 	LucyUI.Initialize(window);
-	Lucy::Button btn("myButton1");
+	Lucy::Button btn("myButton1",sf::Vector2f(75.f,24.f),sf::Vector2f(50.f,50.f));
+	btn.PsetFillColor(sf::Color::Blue);
+	btn.PsetOutlineColor(sf::Color::Red);
+	btn.PsetCornerRadius(5);
+	btn.PsetOutlineThickness(5.f);
+	btn.PsetCornerPoints(6);
 	LucyUI.Add(btn);
-	btn.Size(sf::Vector2f(50.f, 25.f));
-	btn.Location(sf::Vector2f(100.f, 100.f));
+	//btn.Size(sf::Vector2f(50.f, 25.f));
+	//btn.Location(sf::Vector2f(100.f, 100.f));
 
 	//Lucy::Button btn2("myButton2");
 	//LucyUI.Add(btn2);
@@ -48,8 +54,9 @@ int main()
 			}
 		}
 
-		LucyUI.Update(0.f);
+
 		window.clear();
+		LucyUI.Update(0.f);
 		window.display();
 	}
 

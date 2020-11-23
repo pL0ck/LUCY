@@ -11,15 +11,6 @@
 
 namespace Lucy
 {
-    enum Corners : unsigned int
-    {
-        None = 0x00,
-        TopRight = 0x01,
-        TopLeft = 0x02,
-        BottomLeft = 0x04,
-        BottomRight = 0x08,
-        All = 0xF
-    };
 
     ////////////////////////////////////////////////////////////
     /// \brief Specialized shape representing a rectangle
@@ -28,15 +19,16 @@ namespace Lucy
     class LUCY_API RoundedRectangle : public sf::Shape
     {
     public:
+        RoundedRectangle();
         ////////////////////////////////////////////////////////////
         /// \brief Default constructor
         ///
-        /// \param size Size of the rectangle
+        /// \param size PsetSize of the rectangle
         /// \param radius Radius for each rounded corner
         /// \param cornerPointCount Number of points of each corner
         ///
         ////////////////////////////////////////////////////////////
-        explicit RoundedRectangle(const sf::Vector2f& size = sf::Vector2f(0, 0), float radius = 0, unsigned int cornerPointCount = 0, const unsigned int& displayCorners = Lucy::Corners::All);
+        void RoundedRectangle2(const sf::Vector2f& size = sf::Vector2f(0, 0), float radius = 0, unsigned int cornerPointCount = 0, const Lucy::Corners& displayCorners = Lucy::Corners::All);
 
         ////////////////////////////////////////////////////////////
         /// \brief Set the size of the rounded rectangle
@@ -46,17 +38,17 @@ namespace Lucy
         /// \see getSize
         ///
         ////////////////////////////////////////////////////////////
-        void Size(const sf::Vector2f& size);
+        void setSize(const sf::Vector2f& size);
 
         ////////////////////////////////////////////////////////////
         /// \brief Get the size of the rounded rectangle
         ///
-        /// \return Size of the rounded rectangle
+        /// \return PsetSize of the rounded rectangle
         ///
-        /// \see setSize
+        /// \see PsetSize
         ///
         ////////////////////////////////////////////////////////////
-        const sf::Vector2f& Size() const;
+        const sf::Vector2f& getSize() const;
 
         ////////////////////////////////////////////////////////////
         /// \brief Set the radius of the rounded corners
@@ -66,7 +58,7 @@ namespace Lucy
         /// \see getCornersRadius
         ///
         ////////////////////////////////////////////////////////////
-        void CornerRadius(float radius);
+        void setCornerRadius(float radius);
 
         ////////////////////////////////////////////////////////////
         /// \brief Get the radius of the rounded corners
@@ -76,7 +68,7 @@ namespace Lucy
         /// \see setCornersRadius
         ///
         ////////////////////////////////////////////////////////////
-        float CornerRadius() const;
+        float getCornerRadius() const;
 
         ////////////////////////////////////////////////////////////
         /// \brief Set the number of points of each corner
@@ -86,7 +78,7 @@ namespace Lucy
         /// \see getPointCount
         ///
         ////////////////////////////////////////////////////////////
-        void CornerPointCount(unsigned int count);
+        void setCornerPointCount(unsigned int count);
 
         ////////////////////////////////////////////////////////////
         /// \brief Set the corners to display
@@ -94,7 +86,7 @@ namespace Lucy
         /// \param a list of corners
         ///
         ////////////////////////////////////////////////////////////
-        void setDisplayCorners(unsigned int displayCorners);
+        void setDisplayCorners(const Lucy::Corners& displayCorners);
 
         ////////////////////////////////////////////////////////////
         /// \brief Get the number of points defining the rounded rectangle
@@ -115,6 +107,13 @@ namespace Lucy
         ///
         ////////////////////////////////////////////////////////////
         virtual sf::Vector2f getPoint(std::size_t index) const;
+
+        ////////////////////////////////////////////////////////////
+        /// \brief Update teh shape when properties change
+        ///
+        ///
+        ////////////////////////////////////////////////////////////
+        void UpdateShape();
 
 
     private:

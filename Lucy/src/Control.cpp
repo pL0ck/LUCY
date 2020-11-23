@@ -23,10 +23,9 @@ namespace Lucy
 		return ControlType;
 	}
 
-	void Control::Draw()
+	void Control::Draw(sf::RenderWindow *Target)
 	{
 		std::cout << "Base draw\n";
 	}
-
 }
 
